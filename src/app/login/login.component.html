@@ -1,0 +1,17 @@
+<div fxLayoutAlign="center center" fxFlexFill class="main-div">
+    <mat-card fxFlex="35">
+        <mat-toolbar fxLayoutAlign="center center" color="primary">Gas Meter App</mat-toolbar>
+        <form fxLayoutAlign="stretch" fxLayout="column" class="login-form" [formGroup]="formGroup" (ngSubmit)="login()">
+            <mat-form-field>
+              <input matInput placeholder="User Email" formControlName="email">
+            </mat-form-field>
+            
+            <mat-form-field>
+              <input matInput type="password" placeholder="Password" formControlName="password">
+            </mat-form-field>
+            <button style="width: 150px; align-self: center; background-color: blue ; color: white;" mat-raised-button type="submit" routerLink='/userpage'>Login</button>
+            <br>
+            <a style="font-weight: 700; color: darkred; width: fit-content; align-self: flex-end;" routerLinkActive="list-item-active" routerLink="/signup">Don't have an account? Register here!</a>
+        </form>
+    </mat-card>
+</div>

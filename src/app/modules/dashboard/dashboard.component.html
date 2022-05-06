@@ -1,0 +1,44 @@
+<app-header (toggleSideBarPage)="sideBarToggler()"></app-header>
+
+<mat-drawer-container>
+
+    <mat-drawer mode="side" [opened]="sideBarOpen">
+        <app-sidebar></app-sidebar>
+    </mat-drawer>
+
+    <div *ngIf="showChart">
+        <app-widget-area [data]="bigChart"></app-widget-area>
+    </div>
+
+    <br>
+
+    <mat-divider> </mat-divider>
+
+    <br>
+
+    <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="20px" class="stats-cards">
+        <mat-card fxFlex="25">
+            <app-widget-card label="Current Gas level of" [total]="last[3]" percentage="{{(gasData[gasData.length-1]/gasData[0]*100).toString() + '%' }}" [data]="cards"></app-widget-card>
+        </mat-card>
+      
+       
+        
+
+    </div>
+
+    <br>
+
+    <mat-divider> </mat-divider>
+
+    <br>
+
+</mat-drawer-container>
+
+<app-footer></app-footer>
+
+<!--
+<div>
+    <div>Table</div>
+    <div>Pie Chart</div>
+</div>
+-->

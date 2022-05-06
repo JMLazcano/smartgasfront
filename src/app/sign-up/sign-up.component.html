@@ -1,0 +1,25 @@
+<div fxLayoutAlign="center center" fxFlexFill class="main-div">
+  <mat-card fxFlex="35">
+      <mat-toolbar fxLayoutAlign="center center" color="primary">Gas Meter App</mat-toolbar>
+      <form fxLayoutAlign="stretch" fxLayout="column" class="login-form" [formGroup]="form" (ngSubmit)="signup()">
+          <mat-form-field>
+            <input matInput placeholder="User Email" formControlName="email" required>
+          </mat-form-field>
+
+          <mat-form-field>
+            <input matInput type="password" placeholder="User Password" formControlName="password" required>
+            <mat-error>Password must be at least 6 characters</mat-error>
+          </mat-form-field>
+          
+          <mat-form-field>
+            <input matInput type="password" placeholder="Confirm Password" formControlName="confirmation">
+            <!--<mat-error *ngIf="this.form.controls.{confirmation}.hasError('required')">It's a required field</mat-error>
+            -->
+            </mat-form-field>
+          <button style="width: 150px; align-self: center; background-color: blue; color: white;" mat-raised-button type="submit" routerLinkActive="list-item-active">Register</button>
+          <br>
+          <a style="text-align: end; color: gray; width: fit-content; align-self: flex-end;" routerLinkActive="list-item-active" routerLink="/login">Go back to login page</a>
+          
+      </form>
+  </mat-card>
+</div>
